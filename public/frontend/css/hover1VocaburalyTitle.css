@@ -1,0 +1,140 @@
+/*cadr1->cardVcT1
+cadr->cardVcT*/
+
+.VocaburalyTitle h3,p,a{
+	font-family: consolas;
+}
+.VocaburalyTitle{
+	margin:0px;
+	padding:0px;
+	min-height: 100vh;
+	background:;
+	justify-content:center;
+	align-items:center;
+	font-family: consolas;
+	margin-bottom: 100px;
+	margin-top:-500px;
+}
+
+.container_VcT{
+	width:1000px;
+	position: relative;
+	display: flex;
+	justify-content:space-between;
+	font-family: consolas;
+}
+
+.container .cardVcT1{
+	position: relative;
+	margin-right: 35px;
+}
+
+.container .cardVcT .face2{
+	width:300px;
+	height: 410px;
+	transition:0.5s;
+
+}
+.container .cardVcT .face1{
+	width:270px;
+	height: 200px;
+	transition:0.5s;
+	position: absolute;
+	left: 15px;
+	border-radius: 10px;
+
+}
+
+.container .cardVcT .face.face1{
+	position: relative;
+	background: #333;
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	z-index: 1;
+	transform:translateY(160px);
+	overflow: hidden;
+	
+
+}
+.container .cardVcT:hover .face.face1{
+transform:translateY(120px);
+background: #ff0057;
+
+
+}
+
+.container .cardVcT .face.face1 .content{
+	opacity: 1;
+	transition:0.5s;
+
+}
+
+.container .cardVcT:hover .face.face1 .content{
+	opacity: 1;
+}
+
+.container .cardVcT .face.face1 .content img{
+	/*max-width: 100px;*/
+	height: 200px;
+	max-width:100%;
+
+
+}
+.container .cardVcT .face.face1 .content h3{
+	margin: 10px 0 0;
+	padding: 0;
+	color: #fff;
+	text-align: center;
+	font-size: 1.5em;
+}
+.face2 .content{
+	margin-top: 100px;
+
+}
+.container .cardVcT .face.face2{
+	position: relative;
+	background: #fff;
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	padding:20px;
+	box-sizing:border-box;
+	box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+	/*transform:translateY(-100px);*/
+
+}
+
+.eyes{
+text-align: center;
+}
+
+/*.container .card:hover .face.face2{
+	transform:translateY(0);
+}*/
+
+.container .cardVcT .face.face2 .content p{
+	margin:0;
+	padding:0;
+
+}
+
+.container .cardVcT .face.face2 .content a{
+	margin:15px 0 0;/*15px*/
+	display: inline-block;
+	text-decoration: none;
+	font-weight: 900;
+	color: #333;
+	padding:5px;
+	border: 1px solid #333;
+
+}
+
+.container .cardVcT .face.face2 .content a:hover{
+	background:green ;/*#333*/
+	color: #fff;
+
+}
+
+
+

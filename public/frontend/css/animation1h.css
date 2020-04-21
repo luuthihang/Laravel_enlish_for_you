@@ -1,0 +1,121 @@
+*{
+	margin:0px;
+	padding:0xp;
+	font-family:"montserrat";
+}
+/*da sua Nguyen ban la .content*/
+.content1{
+	/*width:1200px;
+	height:350x;
+	display:flex;
+	flex-wrap:wrap;
+	flex-direction:row;*/
+								/*margin:100px auto;*/
+/*	background:#2c3e50;*/
+	
+}
+
+/*da sua Nguyen ban la .content .card*/
+.content1 .card1{
+	/*position:relative;*/
+									/*background:yellow;*/
+	/*margin:10px;
+	box-sizing:border-box;
+	display:inline-block;*/
+}
+/*.middle{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+}*/
+
+.middle1{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+}
+
+.dital{
+	font-size:20px;
+	font-weight:bold;
+}
+
+.topDital{
+	position:absolute;
+	top:10px;
+	left:10px;
+	color:#e67e22;
+}
+.card_HVC{
+	width:250px;
+	height:350px;
+	cursor:pointer;
+	/*overflow:hidden;  .card*/
+	
+}
+
+.front,.back{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	backface-visibility:hidden;
+	position:absolute;
+	transition:transform 1.2s;
+}
+
+
+.front img{
+	/*max-height:100%;
+	width:100%;*/
+	height:100%;
+	
+}
+
+.front{
+	background:#f1f1f1;
+	transform:perspective(600px) rotateY(0deg);
+}
+.back{
+	background:#f1f1f1;
+	transform:perspective(600px) rotateY(180deg);
+}
+.back-content{
+	color:#2c3e50;
+	width:100%;
+	text-align:center;
+	
+	
+}
+
+.sm{
+	margin:20px 0;
+}
+
+.sm a{
+	display:inline-flex;
+	width:30px;
+	height:30px;
+	flex-wrap:wrap;
+	justify-content:center;
+	align-items:center;
+	font-size:18px;
+	transition:0.4s;
+	border-radius:50%;
+}
+
+.sm a:hover{
+	background:#bdc3c7;
+	color:white;
+}
+
+.card_HVC:hover > .front{
+	transform:perspective(600px) rotateY(-180deg);
+}
+
+.card_HVC:hover > .back{
+	transform:perspective(600px) rotateY(0deg);
+}
+
+
