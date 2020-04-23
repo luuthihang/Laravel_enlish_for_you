@@ -24,7 +24,7 @@
            </div>
             <h3>Từ vựng tiếng anh thông dụng</h3>
             <p>Tổng hợp các bộ Từ vựng tiếng anh thông dụng nhất. Khi học được những bộ từ này chúng sẽ giúp bạn tăng khả năng giao tiếp tiếng anh đáng kể đó nhé !</p>
-            <a href="#">read more</a>
+            <a href="{{URL::to('/vocabulary-popular')}}">read more</a>
           </div>
         </div>
       </div>

@@ -26,13 +26,20 @@
 
 
 Route::get('/','HomeController@index');
+Route::get('/trang-chu','HomeController@index');
 Route::get('/menubar','MenuBarController@index');
 Route::get('/grammar','GrammarCardController@index');
 
 Route::get('/vocabulary-title','VocabularyController@vocabularyTitle');
-Route::get('/vocabulary-items','VocabularyController@vocabularyItems');
 
-Route::get('/trang-chu','HomeController@index');
+
+
+//Route::get('/vocabulary-popular','VocabularyController@vocabularyPopular');/{id_level}
+Route::get('/vocabulary-popular','VocabularyController@vocabularyPopular');
+
+Route::get('/vocabulary-items','VocabularyController@vocabularyItems');
+//Route::get('/vocabulary-items/{id_level}','VocabularyController@vocabularyItems');
+
 
 
 

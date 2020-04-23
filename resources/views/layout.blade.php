@@ -72,7 +72,7 @@
     <!--/header-->
     
     <!--slider-->
-    @include('slider')
+   
     <!--/slider-->
     
     <section>
