@@ -34,14 +34,26 @@
   }
 
     </style>
-    <?php $level=10;  ?>
+    <?php 
+    $level=10;$i=0;
+      // if(isset($id_vc)){
+      //   echo "<pre>";
+      //   print_r($id_vc);
+      //   echo "</pre>";
+      // }else{
+      //   echo "loi";
+      // }
+      ?>
 	    <div class="container">
         <div class="row">
           <div class="content_title">
             <span style="color:#e83e8c;float:left;">Bài Học</span>
             <span style="float:right;">{{$level}} Level</span>
           </div>
-        @for($i=1;$i<=$level;$i++)
+       
+
+          @foreach($id_vc as $getIdVc)
+           <?php $i++;  ?>
           @if($i==1||$i%4==1)
              <div class="row TitleItems_vc">
           @endif
@@ -51,14 +63,15 @@
               <div class="card-body">
                 <h5 style="color:blue;" class="card-title text-center title-Grammar">Từ vựng level {{$i}}</h5>
                 <p class="card-text">Từ vựng tiếng anh thông dụng.</p>
-                <a href="{{URL::to('/vocabulary-items?page=1')}}" class="btn btn-primary">Learn More</a>
+                <a href="{{URL::to('/vocabulary-items',$getIdVc)}}" class="btn btn-primary">Learn More</a>
               </div>
             </div>
           </div>
            @if($i%4==0)
              </div>  
           @endif
-        @endfor
+          @endforeach
+      
          
       </div>
     </div>

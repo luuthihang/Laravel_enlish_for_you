@@ -28,88 +28,71 @@
 
 .contentCardAdd .lang-en{
   color: blue;
-
-}
-.title_level{
-  width:100%;
-  height: 30px;
-  line-height: 30px;
-  font-size: 25px;
-  color:#e83e8c;
 }
 </style>
 
 
 <?php  
-//echo "<pre>";
- //print_r($vocabulary1);
-  //$vc=json_decode($vocabulary1);
- // var_dump($vocabulary1);
- //var_dump($newVC);
- //print_r($vc);
-//echo "</pre>";
+   // foreach($vocabulary1 as $VocaInfo){
+   //                 // echo var_dump($Voca->vocabulary_content);
+   //  $SumaryResult= json_decode($VocaInfo->vocabulary_content);
 
-  //foreach($vocabulary1 as $VocaInfo){
-     
+   //                  // var_dump($SumaryResult);
+   //                  // echo $SumaryResult->id;
 
-                   // echo var_dump($Voca->vocabulary_content);
-   // $SumaryResult= json_decode($VocaInfo->vocabulary_content);
-
-                    // var_dump($SumaryResult);
-                    // echo $SumaryResult->id;
-
-                    //  echo "<pre>";
-                    // print_r($SumaryResult->list[0]->word->example) ;
-                    //  echo "</pre>";
+   //                  //  echo "<pre>";
+   //                  // print_r($SumaryResult->list[0]->word->example) ;
+   //                  //  echo "</pre>";
 
 
-  //  echo "<pre>";
-    //    echo($SumaryResult->list[0]->word->word).": ";
-    //     print_r($SumaryResult->list[0]->word->pronounce[0]);
-    //   print_r($SumaryResult->list[0]->mean) ;
-    //  echo "</pre>";
+   //   echo "<pre>";
+   //     echo($SumaryResult->list[0]->word->word).": ";
+   //      print_r($SumaryResult->list[0]->word->pronounce[0]);
+   //    print_r($SumaryResult->list[0]->mean) ;
+   //   echo "</pre>";
 
-    // $lists_vc=$SumaryResult->list;
+   //  $lists_vc=$SumaryResult->list;
     
-   // foreach($lists_vc as $result){
-   //     $ex=$result->word;
-   //     // $arrayEx=$ex->example;  sai vi bien co the rong
-   //      if(!empty($ex->example)){
-   //        $arrayEx=$ex->example;
-   //        foreach ($arrayEx as $arrayExItem) {
-   //          print_r($arrayExItem[0]);
-   //          print_r($arrayExItem[1]);
-   //        }
-   //      }
-   //   }
+   // // foreach($lists_vc as $result){
+   // //     $ex=$result->word;
+   // //     // $arrayEx=$ex->example;  sai vi bien co the rong
+   // //      if(!empty($ex->example)){
+   // //        $arrayEx=$ex->example;
+   // //        foreach ($arrayEx as $arrayExItem) {
+   // //          print_r($arrayExItem[0]);
+   // //          print_r($arrayExItem[1]);
+   // //        }
+   // //      }
+   // //   }
 
-   //}
+   // }
+   ?>
 
-  ?>
-  <div class="title_level">
-     <div style="float:left;">Level: {{$id_level}}</div>
-     <div style="float:right;">Có {{count($vocabulary1)}} từ</div>
-  </div>
-  <hr/>
-   <div class="card-columns">
+<div class="card-columns">
 
   @foreach($vocabulary1 as $VocaInfo)
   <?php 
-    if(!empty($VocaInfo->word->pronounce)){
-      $pronounce=':/'.$VocaInfo->word->pronounce[0].'/';
-  } 
-
-  ?>
-  
+  $countWord=0;
+      $SumaryResult= json_decode($VocaInfo->vocabulary_content);
+    ?>
+      @foreach ($SumaryResult->list as $value) 
+      <?php
+        $countWord++;
+        $wordItem=$value->yword;
+         $mean= $value->mean;
+         // $pronounce=$value->word;
+          // $wordItem=$SumaryResult->list[0]->word->word;
+         if(!empty($value->word->pronounce)){
+            $pronounce=$value->word->pronounce[0];
+         }
+         
+      ?>
    <div class="card addCardVc">
-      <img class="card-img-top text-right card-imga" src="{{('../public/frontend/images/hoabk1.jpg')}}" style="width:100px;"  alt="">
+      <img class="card-img-top text-right card-imga" src="{{('public/frontend/images/hoabk1.jpg')}}" style="width:100px;"  alt="">
       <div class="card-body">
          <p class="card-text">
-             <span style="color:red; font-weight: 555; font-size: 2rem; font-family: Cabin,sans-serif;"class="key-word">
-              <i style="font-size:20px;padding-right:2px;" class="fa">&#xf0d7;</i>
-              {{$VocaInfo->yword}}
-             </span>
-           <span class="pronouncce-word">{{$pronounce}}</span>
+             <span style="color:red; font-weight: 555; font-size: 2rem; font-family: Cabin,sans-serif;"class="key-word"><i style="font-size:20px;padding-right:2px;" class="fa">&#xf0d7;</i><?php echo $wordItem;  ?></span>
+           <span class="pronouncce-word"><?php echo "/". $pronounce."/" ; ?></span>
            <div class="list-audio" style="padding-top: inherit">
             <span style='padding-right:2px'>
                <button style='font-size:12px;color:green'>US <i class='fas fa-volume-up'></i>
@@ -121,15 +104,15 @@
          
            <div style="padding-top: inherit" class="w-mean">
            <i style="color:green"class="far fa-dot-circle"></i>
-            {{$VocaInfo->mean}}
+            {{$mean}}
           </div>
           <span class="btn_addVc">
             <button style="font-size:18px"><i class="fa fa-bars"></i></button>
          </span>
          <div class="contentCardAdd">
             <ul style="list-style-type:circle;">
-              @if(!empty($VocaInfo->word->example))
-                 @foreach ($VocaInfo->word->example as $arrayExs) 
+              @if(!empty($value->word->example))
+                 @foreach ($value->word->example as $arrayExs) 
                  <?php  
                      $x1=$arrayExs[0];
                      $x2=$arrayExs[1];
@@ -144,19 +127,10 @@
       </div>
    </div>
   @endforeach
-  
+  @endforeach
 
   
-</div>
-<div style="background:#28a745; width:100%; text-align:center;height:30px; line-height:30px; margin-bottom:10px;color:white;font-size:20px;border-radius:5px;" class="row">Finish</div>
-<div class="row">{{$vocabulary1->links()}}</div>
-
-
-
-
-
-
-  <!-- <div class="card addCardVc">
+    <!-- <div class="card addCardVc">
       <img class="card-img-top text-right card-imga" src="{{('public/frontend/images/hoabk1.jpg')}}" style="width:100px;"  alt="">
       <div class="card-body">
          <p class="card-text">
@@ -193,6 +167,7 @@
    </div> -->
    <!--<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>-->
 
-
+</div>
+<div style="background:#28a745; width:100%; text-align:center;height:30px; line-height:30px; margin-bottom:10px;color:white;font-size:20px;border-radius:5px;" class="row">Finish</div>
 
  @endsection

@@ -37,8 +37,8 @@ Route::get('/vocabulary-title','VocabularyController@vocabularyTitle');
 //Route::get('/vocabulary-popular','VocabularyController@vocabularyPopular');/{id_level}
 Route::get('/vocabulary-popular','VocabularyController@vocabularyPopular');
 
-Route::get('/vocabulary-items','VocabularyController@vocabularyItems');
-//Route::get('/vocabulary-items/{id_level}','VocabularyController@vocabularyItems');
+//Route::get('/vocabulary-items','VocabularyController@vocabularyItems');
+Route::get('/vocabulary-items/{id_level}','VocabularyController@vocabularyItems');
 
 
 

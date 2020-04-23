@@ -23,7 +23,7 @@ class VocabularyController extends Controller
     }
    
 
-     public function vocabularyItems(Request $request){
+     public function vocabularyItems_ok1(Request $request){
      	 //$vocabulary1=vocabulary::all();
          // $vocabulary1=vocabulary::where('id',1)->paginate(10);
             #ok
@@ -78,8 +78,6 @@ class VocabularyController extends Controller
          // 'path' => $request->url(),
          // 'query' => $request->query()
          // ]);
-
-
      $Sum_vocabulary=$x2;
      $total = count($Sum_vocabulary); // total count of the set, this is necessary so the paginator will know the total pages to display
      $page = $request->page ? $request->page : 1; // get current page from the request, first page is null
@@ -98,17 +96,17 @@ class VocabularyController extends Controller
 
     	 return view('pages.vocabularyItemsAdd',compact('vocabulary1'));
     }
+    public function vocabularyItems_ok2($id_level){
+         $vocabulary1=vocabulary::where('id',$id_level)->get();
+        return view('pages.vocabularyItemsAdd',compact('vocabulary1'));
+    }
 
 
-     public function vocabularyItems1($id_level){//Request $request,$id_level
-         //$vocabulary1=vocabulary::all();
-         // $vocabulary1=vocabulary::where('id',1)->paginate(10);
-            #ok
-         //$vocabulary1=vocabulary::where('id','>',0)->paginate(1);
-        //id_levelget
-        $id_levelget=vocabulary::where('id',$id_level)->get();
-        //$vca=vocabulary::all();
-        foreach ($id_levelget as $value1) {
+     public function vocabularyItems($id_level,Request $request){
+
+         $vca=vocabulary::where('id',$id_level)->get();
+        // $vca=vocabulary::all();
+        foreach ($vca as $value1) {
              $arrayCT[]=$value1->vocabulary_content;
             $v1=json_decode(pos($arrayCT))->list;
               foreach ($v1 as $key5 => $value5) {
@@ -117,17 +115,7 @@ class VocabularyController extends Controller
               next($arrayCT);
          }
 
-        // $results=$x2;
-         // $perPage=10;
-         // $vocabulary1 =new Paginator($results,$perPage);
-         //    $vocabulary1 = new LengthAwarePaginator($results,count($results),10,2, [
-         // 'path' => $request->url(),
-         // 'query' => $request->query()
-         // ]);
-
-
-
-     $Sum_vocabulary=$x2;
+        $Sum_vocabulary=$x2;
      $total = count($Sum_vocabulary); // total count of the set, this is necessary so the paginator will know the total pages to display
      $page = $request->page ? $request->page : 1; // get current page from the request, first page is null
        
@@ -142,22 +130,14 @@ class VocabularyController extends Controller
     ]);
 
 
-   
-   
-        // return view('pages.vocabularyItemsAdd',['vc'=>$vocabulary1]);
-        // return view('pages.vocabularyItemsAdd',compact('vocabulary1'));
-     return view('pages.cardTitleItems_vocabulary',compact('vocabulary1','id_levelget'));//'vocabulary1',
+        return view('pages.vocabularyItemsAdd',compact('vocabulary1','id_level'));
     }
-
-
 
  
 
-   
-
     public function vocabularyPopular(){
-         //$x=vocabularyItems(Request $request);
-      return view('pages.cardTitleItems_vocabulary');
+       $id_vc=vocabulary::select('id')->get();
+      return view('pages.cardTitleItems_vocabulary',compact('id_vc'));
     }
 
 
