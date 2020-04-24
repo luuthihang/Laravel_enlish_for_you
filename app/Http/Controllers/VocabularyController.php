@@ -19,7 +19,8 @@ use App\Category_vocabulary;
 class VocabularyController extends Controller
 {
     public function vocabularyTitle(){
-    	return view('pages.vocabularyTitle');
+        $categor_vocabulary=Category_vocabulary::all();
+    	return view('pages.vocabularyTitle',compact('categor_vocabulary'));
     }
    
 
@@ -96,52 +97,54 @@ class VocabularyController extends Controller
 
     	 return view('pages.vocabularyItemsAdd',compact('vocabulary1'));
     }
+
     public function vocabularyItems_ok2($id_level){
          $vocabulary1=vocabulary::where('id',$id_level)->get();
         return view('pages.vocabularyItemsAdd',compact('vocabulary1'));
     }
 
 
-     public function vocabularyItems($id_level,Request $request){
+    public function vocabularyItems($id_level,Request $request){
 
          $vca=vocabulary::where('id',$id_level)->get();
         // $vca=vocabulary::all();
         foreach ($vca as $value1) {
-             $arrayCT[]=$value1->vocabulary_content;
+            $arrayCT[]=$value1->vocabulary_content;
             $v1=json_decode(pos($arrayCT))->list;
-              foreach ($v1 as $key5 => $value5) {
+            foreach ($v1 as $key5 => $value5) {
                  $x2[]=$value5;
               }
               next($arrayCT);
          }
 
         $Sum_vocabulary=$x2;
-     $total = count($Sum_vocabulary); // total count of the set, this is necessary so the paginator will know the total pages to display
-     $page = $request->page ? $request->page : 1; // get current page from the request, first page is null
-       
-     $perPage = 10; // how many items you want to display per page?
-     $offset = ($page - 1) * $perPage; // get the offset, how many items need to be "skipped" on this page
+         $total = count($Sum_vocabulary); // total count of the set, this is necessary so the paginator will know the total pages to display
+         $page = $request->page ? $request->page : 1; // get current page from the request, first page is null
+           
+         $perPage = 10; // how many items you want to display per page?
+         $offset = ($page - 1) * $perPage; // get the offset, how many items need to be "skipped" on this page
 
-     $Sum_vocabulary = array_slice($Sum_vocabulary, $offset, $perPage); // the array that we actually pass to the paginator is sliced
+         $Sum_vocabulary = array_slice($Sum_vocabulary, $offset, $perPage); // the array that we actually pass to the paginator is sliced
 
-     $vocabulary1=  new LengthAwarePaginator($Sum_vocabulary, $total, $perPage, $page, [
-        'path' => $request->url(),
-        'query' => $request->query()
-    ]);
+         $vocabulary1=  new LengthAwarePaginator($Sum_vocabulary, $total, $perPage, $page, [
+            'path' => $request->url(),
+            'query' => $request->query()
+        ]);
 
 
         return view('pages.vocabularyItemsAdd',compact('vocabulary1','id_level'));
     }
 
  
+    // public function vocabularyPopular(){
+    //    $id_vc=vocabulary::select('id')->get();
+    //   return view('pages.cardTitleItems_vocabulary',compact('id_vc'));
+    // }
 
-    public function vocabularyPopular(){
-       $id_vc=vocabulary::select('id')->get();
+    public function vocabularyPopular($id_category){
+        // $id_category_get=Category_vocabulary::select('id')->get();
+       $id_vc=vocabulary::where('Category_vocabulary_id',$id_category)->get();
       return view('pages.cardTitleItems_vocabulary',compact('id_vc'));
     }
-
-
-   
-
      
 }

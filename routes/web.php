@@ -35,7 +35,7 @@ Route::get('/vocabulary-title','VocabularyController@vocabularyTitle');
 
 
 //Route::get('/vocabulary-popular','VocabularyController@vocabularyPopular');/{id_level}
-Route::get('/vocabulary-popular','VocabularyController@vocabularyPopular');
+Route::get('/vocabulary-popular/{id_category}','VocabularyController@vocabularyPopular');
 
 //Route::get('/vocabulary-items','VocabularyController@vocabularyItems');
 Route::get('/vocabulary-items/{id_level}','VocabularyController@vocabularyItems');
@@ -49,5 +49,7 @@ Route::get('/admin','AdminController@index');
 Route::get('/dashboard','AdminController@show_dashboard');
 Route::post('/admin-dashboard','AdminController@dashboard');
 Route::get('/logOut','AdminController@logOut');
+
+
 
 

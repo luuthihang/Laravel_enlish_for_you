@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableVocabularyTable extends Migration
+class AddAttributeCategoryVocabularyIntoTblVocabulary extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateTableVocabularyTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_vocabulary', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->json('vocabulary_content');
-            $table->timestamps();
+        Schema::table('tbl_vocabulary', function (Blueprint $table) {
+             $table->increments('Category_vocabulary_id');
         });
     }
 
@@ -27,6 +25,8 @@ class CreateTableVocabularyTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_vocabulary');
+        Schema::table('tbl_vocabulary', function (Blueprint $table) {
+            //
+        });
     }
 }

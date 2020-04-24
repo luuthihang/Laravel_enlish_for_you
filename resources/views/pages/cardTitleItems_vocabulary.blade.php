@@ -59,7 +59,7 @@
           @endif
            <div class="col-md-3">
             <div class="card"> <!-- style="width:18rem;" -->
-              <img src="{{('public/frontend/images/titleItem.jpg')}}" alt="" class="card-img-top" style="width:150px;margin:10px auto;">
+              <img src="{{('../public/frontend/images/titleItem.jpg')}}" alt="" class="card-img-top" style="width:150px;margin:10px auto;">
               <div class="card-body">
                 <h5 style="color:blue;" class="card-title text-center title-Grammar">Từ vựng level {{$i}}</h5>
                 <p class="card-text">Từ vựng tiếng anh thông dụng.</p>
