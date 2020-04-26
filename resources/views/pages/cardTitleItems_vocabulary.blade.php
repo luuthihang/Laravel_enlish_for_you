@@ -52,7 +52,7 @@
           </div>
        
 
-          @foreach($id_vc as $getIdVc)
+          @foreach($nametopic as $key=> $getIdVc)
            <?php $i++;  ?>
           @if($i==1||$i%4==1)
              <div class="row TitleItems_vc">
@@ -61,9 +61,9 @@
             <div class="card"> <!-- style="width:18rem;" -->
               <img src="{{('../public/frontend/images/titleItem.jpg')}}" alt="" class="card-img-top" style="width:150px;margin:10px auto;">
               <div class="card-body">
-                <h5 style="color:blue;" class="card-title text-center title-Grammar">Từ vựng level {{$i}}</h5>
-                <p class="card-text">Từ vựng tiếng anh thông dụng.</p>
-                <a href="{{URL::to('/vocabulary-items',$getIdVc)}}" class="btn btn-primary">Learn More</a>
+                <h5 style="color:blue;" class="card-title text-center title-Grammar">{{$getIdVc}}</h5>
+                <p class="card-text">{{$getIdVc}}</p>
+                <a href="{{URL::to('/vocabulary-items',$key)}}" class="btn btn-primary">Learn More</a>
               </div>
             </div>
           </div>

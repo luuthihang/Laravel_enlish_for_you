@@ -41,6 +41,7 @@ Route::get('/vocabulary-popular/{id_category}','VocabularyController@vocabularyP
 Route::get('/vocabulary-items/{id_level}','VocabularyController@vocabularyItems');
 
 
+Route::get('/schema','VocabularyController@getImages');
 
 
 

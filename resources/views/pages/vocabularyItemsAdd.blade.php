@@ -87,7 +87,7 @@
 
   ?>
   <div class="title_level">
-     <div style="float:left;">Level: {{$id_level}}</div>
+     <div style="float:left;">{{$name_title}}</div>
      <div style="float:right;">Có {{count($vocabulary1)}} từ</div>
   </div>
   <hr/>
@@ -95,6 +95,14 @@
 
   @foreach($vocabulary1 as $VocaInfo)
   <?php 
+     if(!empty($VocaInfo->image)){
+      $nameimage=$VocaInfo->image->name.".".$VocaInfo->image->type;
+      //echo $nameimage;
+    }
+    else{
+      $nameimage="hoabk1.jpg";
+    }
+
     if(!empty($VocaInfo->word->pronounce)){
       $pronounce=':/'.$VocaInfo->word->pronounce[0].'/';
   } 
@@ -102,7 +110,7 @@
   ?>
   
    <div class="card addCardVc">
-      <img class="card-img-top text-right card-imga" src="{{('../public/frontend/images/hoabk1.jpg')}}" style="width:100px;"  alt="">
+      <img class="card-img-top text-right card-imga" src="../public/frontend/images/{{$nameimage}}" style="width:100px;"  alt="">
       <div class="card-body">
          <p class="card-text">
              <span style="color:red; font-weight: 555; font-size: 2rem; font-family: Cabin,sans-serif;"class="key-word">

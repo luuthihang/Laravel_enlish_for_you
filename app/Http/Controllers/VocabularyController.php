@@ -110,7 +110,9 @@ class VocabularyController extends Controller
         // $vca=vocabulary::all();
         foreach ($vca as $value1) {
             $arrayCT[]=$value1->vocabulary_content;
+            $array_info=json_decode(pos($arrayCT));
             $v1=json_decode(pos($arrayCT))->list;
+            $name_title=$array_info->name;
             foreach ($v1 as $key5 => $value5) {
                  $x2[]=$value5;
               }
@@ -132,7 +134,7 @@ class VocabularyController extends Controller
         ]);
 
 
-        return view('pages.vocabularyItemsAdd',compact('vocabulary1','id_level'));
+        return view('pages.vocabularyItemsAdd',compact('vocabulary1','id_level','name_title'));
     }
 
  
@@ -144,7 +146,71 @@ class VocabularyController extends Controller
     public function vocabularyPopular($id_category){
         // $id_category_get=Category_vocabulary::select('id')->get();
        $id_vc=vocabulary::where('Category_vocabulary_id',$id_category)->get();
-      return view('pages.cardTitleItems_vocabulary',compact('id_vc'));
+       foreach ($id_vc as $key => $value) {
+          $inforVocabulary=json_decode($value->vocabulary_content);
+          $nametopic[$value->id]=$inforVocabulary->name;
+       }
+      return view('pages.cardTitleItems_vocabulary',compact('id_vc','nametopic'));
+    }
+
+
+
+
+    public function getImages_OK(){
+         $vca=vocabulary::all();
+      
+        foreach ($vca as $value1) {
+            $arrayCT[]=$value1->vocabulary_content;
+            $array_info=json_decode(pos($arrayCT));
+            $v1=json_decode(pos($arrayCT))->list;
+            $name_title=$array_info->name;
+            $name_level[]=$name_title;
+            foreach ($v1 as $key5 => $value5) {
+                // $x2[]=$value5->_id;
+                $x2[$value5->_id]= $value5->image;//.$value5->image->name.$value5->image->type;
+              }
+              $x2[]="ket thuc".$name_title;
+              next($arrayCT);
+         }
+         $nameImages=$x2;
+        return view('pages.schema',compact('nameImages','name_level[]'));
+    }
+
+
+    public function getImages(){
+        $vca=vocabulary::all();
+        foreach ($vca as $value1) {
+            $arrayCT[]=$value1->vocabulary_content;
+            $array_info=json_decode(pos($arrayCT));
+            $v1=json_decode(pos($arrayCT))->list;
+            $id_level_audio=$array_info->idn->id;
+            $id_audio_level[]=$id_level_audio;
+
+            foreach ($v1 as $key5 => $value5) {
+                if(isset($value5->word->word)){
+                     $id_name_audio=$value5->word->word;
+                } 
+
+              if(isset($value5->word->_id) && !empty($value5->word->audio)){
+                 $i=0;
+                foreach ($value5->word->audio as $key_name_audio => $value_name) {
+
+                    $name_audio=explode("/",$value_name);
+                    $x2[]="https://kndict.com/upload/audio/word/fda750d28413811b3ede6e5911efd33c/".$id_level_audio."-202030/".$value5->word->_id."/".$i.'_'.$id_name_audio.".mp3";
+                     $i++;
+                }
+
+                
+              }
+             
+        
+              }
+           //$x2[]= "</br> ket thuc".$id_level_audio;
+              next($arrayCT);
+         }
+         $file_audios=$x2;
+        return view('pages.schema',compact('file_audios','id_audio_level'));
+
     }
      
 }
