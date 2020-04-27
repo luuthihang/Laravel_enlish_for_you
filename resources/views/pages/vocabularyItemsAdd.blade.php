@@ -103,9 +103,11 @@
       $nameimage="hoabk1.jpg";
     }
 
-    if(!empty($VocaInfo->word->pronounce)){
+    if(isset($VocaInfo->word->pronounce)&& !empty($VocaInfo->word->pronounce)){
       $pronounce=':/'.$VocaInfo->word->pronounce[0].'/';
-  } 
+  } else{
+    $pronounce="/hello/";
+  }
 
   ?>
   
@@ -119,12 +121,26 @@
              </span>
            <span class="pronouncce-word">{{$pronounce}}</span>
            <div class="list-audio" style="padding-top: inherit">
+             @if(!empty($VocaInfo->word->audio))
+             <?php  $i_a=0;   ?>
+            @foreach($VocaInfo->word->audio as $name_audio)
+            <?php 
+              //echo $name_audio;  
+              $arrayname=explode('/', $name_audio);
+              $getNameAudio=$i_a.'_'.$arrayname[0].".mp3";
+              $i_a++;
+               //echo  $getNameAudio; 
+            ?>
+            <audio id="<?php echo $getNameAudio;  ?>">
+               <source src="../public/frontend/Audios/{{$getNameAudio}}">
+            </audio>
             <span style='padding-right:2px'>
-               <button style='font-size:12px;color:green'>US <i class='fas fa-volume-up'></i>
+               <button onclick="playAudio('<?php echo $getNameAudio;  ?>')" type="button" style='font-size:12px;color:green'>US <i class='fas fa-volume-up'></i>
                </button>
             </span>
-               <button style='font-size:12px;color:green'>UK <i class='fas fa-volume-up'></i>
-               </button>
+            @endforeach
+            @endif
+
            </div>
          
            <div style="padding-top: inherit" class="w-mean">
@@ -161,7 +177,13 @@
 
 
 
-
+<script language="javascript">
+function playAudio(id_audio) {  
+ var x = document.getElementById(id_audio);
+ x.load();
+  x.play(); 
+} 
+</script>
 
 
   <!-- <div class="card addCardVc">

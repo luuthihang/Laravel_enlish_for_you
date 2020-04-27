@@ -27,14 +27,12 @@
 // echo $i;
 
 
+
+
 #get audio
-//'id_audio','$id_audio_level'
+
 foreach ($file_audios as $key => $value) {
 	echo trim($value)."</br>";
 }
-// echo "<pre>";
-// var_dump($file_audios);
-// var_dump($id_audio_level);
 
-// echo "</pre>";
 ?>

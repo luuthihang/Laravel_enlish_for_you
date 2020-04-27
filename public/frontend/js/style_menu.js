@@ -16,17 +16,17 @@
 //     )
 // })
 
-
-jQuery(document).ready(function(){
-      pos=$(".header-bottom").position();
-$(window).scroll(function(){
-      var posScoll=$(document).scrollTop();
-      if(parseInt(posScoll)>parseInt(pos.top)){
-            $(".header-bottom").addClass('fixNav');
+//-----------------ok------------
+// jQuery(document).ready(function(){
+//       pos=$(".header-bottom").position();
+// $(window).scroll(function(){
+//       var posScoll=$(document).scrollTop();
+//       if(parseInt(posScoll)>parseInt(pos.top)){
+//             $(".header-bottom").addClass('fixNav');
            
-      }else{
-            $(".header-bottom").removeClass('fixNav');
+//       }else{
+//             $(".header-bottom").removeClass('fixNav');
            
-      }
-});
-});
+//       }
+// });
+// });

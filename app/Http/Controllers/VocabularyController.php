@@ -123,7 +123,7 @@ class VocabularyController extends Controller
          $total = count($Sum_vocabulary); // total count of the set, this is necessary so the paginator will know the total pages to display
          $page = $request->page ? $request->page : 1; // get current page from the request, first page is null
            
-         $perPage = 10; // how many items you want to display per page?
+         $perPage = 15; // how many items you want to display per page?
          $offset = ($page - 1) * $perPage; // get the offset, how many items need to be "skipped" on this page
 
          $Sum_vocabulary = array_slice($Sum_vocabulary, $offset, $perPage); // the array that we actually pass to the paginator is sliced
@@ -200,11 +200,13 @@ class VocabularyController extends Controller
                      $i++;
                 }
 
+
                 
               }
-             
+            
         
               }
+               $x2[]=$array_info->idn->id."-----".$array_info->name;
            //$x2[]= "</br> ket thuc".$id_level_audio;
               next($arrayCT);
          }

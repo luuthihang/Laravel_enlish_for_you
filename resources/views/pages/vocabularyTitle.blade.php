@@ -14,7 +14,7 @@
       <div class="cardVcT cardVcT1">
         <div class="face face1">
           <div class="content">
-            <img src="{{('public/frontend/images/hoa5.jpg')}}">
+            <img src="public/frontend/images/{{$C_voca->CV_image}}">
            <!--  <h3>Design</h3> -->
           </div>
         </div>
