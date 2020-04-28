@@ -19,6 +19,8 @@
     <link href="{{asset('public/frontend/css/animation1h.css')}}" rel="stylesheet">
      <link href="{{asset('public/frontend/css/modifile.css')}}" rel="stylesheet">
      <link href="{{asset('public/frontend/css/style_menu.css')}}" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="{{asset('public/frontend/css/language1.css')}}">
+     <link rel="stylesheet" href="{{('public/frontend/css/SuLyAnh.css')}}" type="text/css"></link>
      <!-- bootstrap4_add.css -->
      <link href="{{asset('public/frontend/css/bootstrap4_add.css')}}" rel="stylesheet">
    <!--  https://kit-free.fontawesome.com/releases/latest/css/free.min.css -->
