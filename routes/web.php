@@ -42,11 +42,11 @@ Route::get('/vocabulary-items/{id_level}','VocabularyController@vocabularyItems'
 
 
 Route::get('/schema','VocabularyController@getImages');
-Route::get('/story','ControllerStory@showStory');
+Route::get('/story/{id_story}','ControllerStory@showStory');
 Route::get('/title-story','ControllerStory@titleStory');
 
 
-Route::get('/detail-grammar','GrammarCardController@detail_grammar');
+Route::get('/detail-grammar/{id_grammar}','GrammarCardController@detail_grammar');
 
 
 

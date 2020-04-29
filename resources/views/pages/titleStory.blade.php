@@ -1,8 +1,15 @@
 @extends('layout')
 @section('content')
-	
-	 <div class="list_story">
+	<?php
+	$story;
+	$i=0;
+	?>
+	<div class="list_story">
+		@foreach($story as $key=>$value)
+		@if($i%3==0)
+	 <div class="row">
 		<ul>
+			@endif
 			<li>
 				<div class="imagesBox">
 					<figure>
@@ -10,108 +17,18 @@
 						<figcaption>
 							<h1>Vegetables Vocabulary</h1>
 							<p>One type of food that </p>
-							<a href="#">read more</a>
+							<a href="{{URL::to('story',$value->id)}}">read more</a>
 
 						</figcaption>
 					</figure>
 				</div>
 			</li>
-
-			<li>
-				<div class="imagesBox">
-					<figure>
-						<img src="./public/frontend/images/flower1.jpg">
-						<figcaption>
-							<h1>Vegetables Vocabulary</h1>
-							<p>One type of food that nearly </p>
-
-							<p>One type of food that </p>
-							
-
-							<a href="#">read more</a>
-
-						</figcaption>
-					</figure>
-				</div>
-			</li>
-
-			<li>
-				<div class="imagesBox">
-					<figure>
-						<img src="./public/frontend/images/flower2.jpg">
-						<figcaption>
-							<h1>Vegetables Vocabulary</h1>
-							<p>One type of food that nearly</p>
-
-							<p>One type of food that </p>
-							<a href="#">read more</a>
-
-						</figcaption>
-					</figure>
-				</div>
-			</li>
-			
+		@if($i>0 && $i%3==2)
 		</ul>
+	 </div>
+	 @endif
+	 <?php $i++; ?>
+	 @endforeach
 	</div>
 	
-	
-	 <div class="list_story">
-	    <ul>
-			<li>
-				<div class="imagesBox">
-					<figure>
-						<img src="./public/frontend/images/hoa6.jpg">
-						<figcaption>
-							<h1>Vegetables Vocabulary</h1>
-							<p>One type of food that nearly</p>
-
-							<p>One type of food that </p>
-							
-
-							<a href="#">read more</a>
-
-						</figcaption>
-					</figure>
-				</div>
-			</li>
-
-			<li>
-				<div class="imagesBox">
-					<figure>
-						<img src="./public/frontend/images/flower1.jpg">
-						<figcaption>
-							<h1>Vegetables Vocabulary</h1>
-							<p>One type of food that nearly</p>
-
-							<p>One type of food </p>
-							
-
-							<a href="#">read more</a>
-
-						</figcaption>
-					</figure>
-				</div>
-			</li>
-
-			<li>
-				<div class="imagesBox">
-					<figure>
-						<img src="./public/frontend/images/flower2.jpg">
-						<figcaption>
-							<h1>Vegetables Vocabulary</h1>
-							<p>One type of food that .</p>
-
-							<p>One type of food </p>
-							<a href="#">read more</a>
-
-						</figcaption>
-					</figure>
-				</div>
-			</li>
-			
-		</ul>
-	
-	 </div>
-	 
- 
  @endsection

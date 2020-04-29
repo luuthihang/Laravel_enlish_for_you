@@ -7,8 +7,17 @@
 	font-size: 20px;
 }
 </style>
-	
-<h2><span style="color:#FF0000;"><em><a id="hien-tai-don" name="hien-tai-don"></a>#1. Thì hiện tại đơn</em></span></h2>
+
+	<?php
+  if(!is_string($grammar_content)){
+    echo $grammar_content[0];
+  }else{
+    echo "khong ton tai";
+  }
+  
+  ?>
+
+<!-- <h2><span style="color:#FF0000;"><em><a id="hien-tai-don" name="hien-tai-don"></a>#1. Thì hiện tại đơn</em></span></h2>
 <table border="2px"; class="table_grammar" cellpadding="1" cellspacing="1" style="width: 100%;background: #fdfdfd;border-radius: 5px;border: 1px dashed #f45b695c;border-collapse: inherit;padding: 15px;">
  <tbody>
   <tr height="31">
@@ -90,9 +99,9 @@
    </td>
   </tr>
  </tbody>
-</table>
+</table> -->
 
-<h2><span style="color:#FF0000;"><em><a id="hien-tai-tiep-dien" name="hien-tai-tiep-dien"></a>#2. Thì hiện tại tiếp diễn </em></span></h2>
+<!-- <h2><span style="color:#FF0000;"><em><a id="hien-tai-tiep-dien" name="hien-tai-tiep-dien"></a>#2. Thì hiện tại tiếp diễn </em></span></h2>
 <table border="2px"; class="table_grammar" cellpadding="1" cellspacing="1" style="width: 100%;background: #fdfdfd;border-radius: 5px;border: 1px dashed #f45b695c;border-collapse: inherit;padding: 15px;">
  <tbody>
   <tr height="62">
@@ -400,7 +409,6 @@
 <p> </p>
 
 <h2><span style="color:#FF0000;"><em><a id="qua-khu-hoan-thanh" name="qua-khu-hoan-thanh"></a>#7. Quá khứ hoàn thành</em></span></h2>
-
 <table border="2px"; class="table_grammar" cellpadding="1" cellspacing="1" style="width: 100%;background: #fdfdfd;border-radius: 5px;border: 1px dashed #f45b695c;border-collapse: inherit;padding: 15px;">
  <tbody>
   <tr height="62">
@@ -563,7 +571,6 @@
 <p> </p>
 
 <h2><span style="color:#FF0000;"><em><a id="tuong-lai-gan" name="tuong-lai-gan"></a>#10. Tương lai gần</em></span></h2>
-
 <table border="2px"; class="table_grammar" cellpadding="1" cellspacing="1" style="width: 100%;background: #fdfdfd;border-radius: 5px;border: 1px dashed #f45b695c;border-collapse: inherit;padding: 15px;">
  <tbody>
   <tr height="62">
@@ -645,7 +652,6 @@
 <p> </p>
 
 <h2><span style="color:#FF0000;"><em><a id="tuong-lai-hoan-thanh" name="tuong-lai-hoan-thanh"></a>#12. Tương lai hoàn thành</em></span></h2>
-
 <table border="2px"; class="table_grammar" cellpadding="1" cellspacing="1" style="width: 100%;background: #fdfdfd;border-radius: 5px;border: 1px dashed #f45b695c;border-collapse: inherit;padding: 15px;">
  <tbody>
   <tr height="31">
@@ -733,7 +739,7 @@
    </td>
   </tr>
  </tbody>
-</table>
+</table> -->
 
 
 

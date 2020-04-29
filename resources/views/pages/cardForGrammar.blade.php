@@ -43,77 +43,35 @@
     /*padding: 28px;*/
     }
     </style>
+
+    <?php
+   $i=0;
+    ?>
 	   <!--  <div class="container"> -->
+       
+      @foreach($tbl_grammar1 as $key =>$value)
+       
+      @if($i%3==0)
         <div class="row row1"> <!-- row -->
-          <div class="col-md-4 hoverAnimate">
-          <div class="card cardTG"> <!-- style="width:18rem;" -->
-            <img style="width:350px;" src="public/frontend/images/hoa5.jpg" alt="" class="card-img-top" style="">
-            <div class="card-body">
-              <h5 class="card-title text-center title-Grammar">1. Thì hiện tại đơn –  Present simple</h5>
-              <p class="card-text">Thì hiện tại đơn (Simple Present hoặc Present Simple) là một thì trong ngữ pháp tiếng Anh nói chung. Thì hiện tại đơn diễn tả một hành động hay sự việc .</p>
-              <a href="" class="btn btn-primary">Learn More</a>
+      @endif
+          <div  class="col-md-4 hoverAnimate">
+          <div style="border:1px solid green;" class="card cardTG"> <!-- style="width:18rem;" -->
+            <img style="width:350px;" src="public/frontend/images/{{$value->image}}" alt="" class="card-img-top" style="">
+            <div style="border-top:1px solid black;"class="card-body">
+              <hr/>
+              <h5 class="card-title text-center title-Grammar">{{$value->title}}</h5>
+              <p class="card-text">{{$value->description}}</p>
+              <a href="{{URL::to('/detail-grammar',$value->id)}}" class="btn btn-primary">Learn More</a>
             </div>
           </div>
         </div>
+        @if($i>0 && $i%3==2)
+        </div> 
+       @endif
+       <?php $i++; ?>
+     @endforeach
+        
 
-          <div class="col-md-4 hoverAnimate">
-          <div class="card cardTG"> <!-- style="width:18rem;" -->
-            <img style="width:350px;" src="public/frontend/images/hoa5.jpg" alt="" class="card-img-top" style="">
-            <div class="card-body">
-              <h5 class="card-title text-center title-Grammar">1. Thì hiện tại đơn –  Present simple</h5>
-              <p class="card-text">Thì hiện tại đơn (Simple Present hoặc Present Simple) là một thì trong ngữ pháp tiếng Anh nói chung. Thì hiện tại đơn diễn tả một hành động hay sự việc .</p>
-              <a href="" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 hoverAnimate">
-          <div class="card cardTG"> <!-- style="width:18rem;" -->
-            <img style="width:350px;" src="public/frontend/images/hoa5.jpg" alt="" class="card-img-top" style="">
-            <div class="card-body">
-              <h5 class="card-title text-center title-Grammar">1. Thì hiện tại đơn –  Present simple</h5>
-              <p class="card-text">Thì hiện tại đơn (Simple Present hoặc Present Simple) là một thì trong ngữ pháp tiếng Anh nói chung. Thì hiện tại đơn diễn tả một hành động hay sự việc .</p>
-              <a href="" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
-        </div>  
-
-
-        <div class="row row1"> <!-- row -->
-          <div class="col-md-4 hoverAnimate">
-          <div class="card cardTG"> <!-- style="width:18rem;" -->
-            <img style="width:350px;" src="public/frontend/images/hoa5.jpg" alt="" class="card-img-top" style="">
-            <div class="card-body">
-              <h5 class="card-title text-center title-Grammar">1. Thì hiện tại đơn –  Present simple</h5>
-              <p class="card-text">Thì hiện tại đơn (Simple Present hoặc Present Simple) là một thì trong ngữ pháp tiếng Anh nói chung. Thì hiện tại đơn diễn tả một hành động hay sự việc .</p>
-              <a href="" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
-
-          <div class="col-md-4 hoverAnimate">
-          <div class="card cardTG"> <!-- style="width:18rem;" -->
-            <img style="width:350px;" src="public/frontend/images/hoa5.jpg" alt="" class="card-img-top" style="">
-            <div class="card-body">
-              <h5 class="card-title text-center title-Grammar">1. Thì hiện tại đơn –  Present simple</h5>
-              <p class="card-text">Thì hiện tại đơn (Simple Present hoặc Present Simple) là một thì trong ngữ pháp tiếng Anh nói chung. Thì hiện tại đơn diễn tả một hành động hay sự việc .</p>
-              <a href="" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 hoverAnimate">
-          <div class="card cardTG"> <!-- style="width:18rem;" -->
-            <img style="width:350px;" src="public/frontend/images/hoa5.jpg" alt="" class="card-img-top" style="">
-            <div class="card-body">
-              <h5 class="card-title text-center title-Grammar">1. Thì hiện tại đơn –  Present simple</h5>
-              <p class="card-text">Thì hiện tại đơn (Simple Present hoặc Present Simple) là một thì trong ngữ pháp tiếng Anh nói chung. Thì hiện tại đơn diễn tả một hành động hay sự việc .</p>
-              <a href="" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
-        </div>  
      <!--  </div> -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     

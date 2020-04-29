@@ -102,7 +102,7 @@
                                     </ul> -->
                                 </li> 
 
-                                <li class="dropdown"><a href="#">exercise<i class="fa fa-angle-down"></i></a>
+                                <li class="dropdown"><a href="{{URL::to('/title-story')}}">Stories<i class="fa fa-angle-down"></i></a>
                                     <!-- <ul role="menu" class="sub-menu">
                                         <li><a href="blog.html">Games one</a></li>
                                         <li><a href="blog-single.html">Games two</a></li>
