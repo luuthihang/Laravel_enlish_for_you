@@ -17,7 +17,7 @@
 						<figcaption>
 							<h1>Vegetables Vocabulary</h1>
 							<p>One type of food that </p>
-							<a href="{{URL::to('story',$value->id)}}">read more</a>
+							<a href="{{route('story',$value->id)}}">read more</a>
 
 						</figcaption>
 					</figure>

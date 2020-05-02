@@ -156,7 +156,7 @@ class VocabularyController extends Controller
 
 
 
-    public function getImages_OK(){
+    public function getImages_ok(){
          $vca=vocabulary::all();
       
         foreach ($vca as $value1) {

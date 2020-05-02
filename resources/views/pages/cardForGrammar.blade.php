@@ -1,4 +1,3 @@
-
 @extends('layout')
 @section('content')
   <style>
@@ -61,7 +60,7 @@
               <hr/>
               <h5 class="card-title text-center title-Grammar">{{$value->title}}</h5>
               <p class="card-text">{{$value->description}}</p>
-              <a href="{{URL::to('/detail-grammar',$value->id)}}" class="btn btn-primary">Learn More</a>
+              <a href="{{route('detail-grammar',$value->id)}}" class="btn btn-primary">Learn More</a>
             </div>
           </div>
         </div>

@@ -17,7 +17,7 @@
 <div style="border:1px solid black;" class="container">
 	<div class="row">
 		<div class="col-md-3 thumbnail">
-			<img style="width:250px;margin-top:60px;" src="../public/frontend/images/{{$value->image1}}"/>
+			<img style="width:250px;margin-top:60px;" src="../../public/frontend/images/{{$value->image1}}"/>
 		</div>
 		<div class="col-md-9 thumbnail">
 			<div style="padding-top:0px;margin-top:112px;width:100%;height:100px;"class="title_story">

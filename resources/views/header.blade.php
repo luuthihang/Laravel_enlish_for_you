@@ -108,7 +108,7 @@
                                         <li><a href="blog-single.html">Games two</a></li>
                                     </ul> -->
                                 </li> 
-                                <li><a href="404.html">News</a></li>
+                                <li><a href="{{route('Video')}}">Videos</a></li>
                                 <li><a href="contact-us.html">share Experience</a></li>
                             </ul>
                         </div>
