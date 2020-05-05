@@ -82,5 +82,15 @@ Route::post('/admin-dashboard','AdminController@dashboard');
 Route::get('/logOut','AdminController@logOut');
 
 
+#story
+Route::get('/all-story','ControllerStory@all_story');
+Route::get('/add-story','ControllerStory@add_story');
+Route::post('/save-story','ControllerStory@save_story');
+Route::get('/edit-story/{id_story}','ControllerStory@edit_story');
+Route::get('/delete-story/{id_story}','ControllerStory@delete_story');
+Route::post('/update-story/{id}','ControllerStory@update_story');
+
+
+
 
 

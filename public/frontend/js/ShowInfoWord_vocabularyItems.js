@@ -8,6 +8,9 @@ $(document).ready(function(){
     var button='.btn_addVc';
     var contentCard='.contentCardAdd';
       showInfoVocabulary(button,contentCard);
+
+      showInfoVocabulary('.show-hide','.con');
+
     });
 
 

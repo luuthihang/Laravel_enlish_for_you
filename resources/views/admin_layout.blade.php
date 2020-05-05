@@ -31,6 +31,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="{{asset('public/backend/js/jquery2.0.3.min.js')}}"></script>
 <script src="{{asset('public/backend/js/raphael-min.js')}}"></script>
 <script src="{{asset('public/backend/js/morris.js')}}"></script>
+<script src="{{asset('public/backend/ckeditor/ckeditor.js')}}"></script>
+<script>
+   CKEDITOR.replace('hang');
+  
+</script>
+<script>
+
+   CKEDITOR.replace('ckeditor1');
+   CKEDITOR.replace('ckeditor2');
+</script>
+
 </head>
 <body>
 <section id="container">
@@ -99,15 +110,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-book"></i>
-                        <span>UI Elements</span>
+                        <span>Story</span>
                     </a>
                     <ul class="sub">
-						<li><a href="typography.html">Typography</a></li>
-						<li><a href="glyphicon.html">glyphicon</a></li>
-                        <li><a href="grids.html">Grids</a></li>
+						<li><a href="{{URL::to('/all-story')}}">all story</a></li>
+						<li><a href="{{URL::to('/add-story')}}">add story</a></li>
+                       <!--  <li><a href="grids.html">edit story</a></li> -->
                     </ul>
                 </li>
-                <li>
+                
+               <!--  <li>
                     <a href="fontawesome.html">
                         <i class="fa fa-bullhorn"></i>
                         <span>Font awesome </span>
@@ -180,7 +192,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <i class="fa fa-user"></i>
                         <span>Login Page</span>
                     </a>
-                </li>
+                </li> -->
             </ul>            </div>
         <!-- sidebar menu end-->
     </div>
@@ -298,6 +310,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		});
 	</script>
+    <script src="{{asset('public/backend/ckeditor/ckeditor.js')}}"></script>
+    <script>
+
+   CKEDITOR.replace('ckeditor1');
+   CKEDITOR.replace('ckeditor2');
+</script>
 	<!-- //calendar -->
 </body>
 </html>

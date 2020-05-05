@@ -55,7 +55,7 @@
       @endif
           <div  class="col-md-4 hoverAnimate">
           <div style="border:1px solid green;" class="card cardTG"> <!-- style="width:18rem;" -->
-            <img style="width:350px;" src="public/frontend/images/{{$value->image}}" alt="" class="card-img-top" style="">
+            <img style="width:350px; height:184px;" src="public/frontend/images/{{$value->image}}" alt="" class="card-img-top" style="">
             <div style="border-top:1px solid black;"class="card-body">
               <hr/>
               <h5 class="card-title text-center title-Grammar">{{$value->title}}</h5>

@@ -31,8 +31,8 @@
 
 #get audio
 
-foreach ($file_audios as $key => $value) {
-	echo trim($value)."</br>";
-}
+// foreach ($file_audios as $key => $value) {
+// 	echo trim($value)."</br>";
+// }
 
 ?>

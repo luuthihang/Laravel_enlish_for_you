@@ -43,7 +43,7 @@
   <div class="card-columns">
     @foreach($category_video as $key => $value)
    <div class="card">
-      <img class="card-img-top" src="{{('public/frontend/images/hoabk1.jpg')}}" style="width:100%;" alt="">
+      <img class="card-img-top" src="public/frontend/images/{{($value->image)}}" style="width:100%;height:213px;" alt="">
       <div class="card-body">
          <h5 class="card-title text-center">{{$value->title}}</h5>
          <p class="card-text text-center">

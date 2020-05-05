@@ -82,64 +82,19 @@
                     <div class="left-sidebar">
                         <h2>Category Vocaburaly</h2>
                         <div class="panel-group category-products" id="accordian"><!--category-productsr-->
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-                                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                            Sportswear
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="sportswear" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <ul>
-                                            <li><a href="#">Nike </a></li>
-                                            <li><a href="#">Under Armour </a></li>
-                                            <li><a href="#">Adidas </a></li>
-                                            <li><a href="#">Puma</a></li>
-                                            <li><a href="#">ASICS </a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordian" href="#mens">
-                                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                            Mens
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="mens" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <ul>
-                                            <li><a href="#">Fendi</a></li>
-                                            <li><a href="#">Guess</a></li>
-                                            <li><a href="#">Valentino</a></li>
-                                            <li><a href="#">Dior</a></li>
-                                            <li><a href="#">Versace</a></li>
-                                            <li><a href="#">Armani</a></li>
-                                            <li><a href="#">Prada</a></li>
-                                            <li><a href="#">Dolce and Gabbana</a></li>
-                                            <li><a href="#">Chanel</a></li>
-                                            <li><a href="#">Gucci</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                           
+                           
                             
-                            <div class="panel panel-default">
+                            <!-- <div class=" show-hide panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordian" href="#womens">
-                                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                            <span class="badge pull-right"><i class="show-hide fa fa-plus"></i></span>
                                             Womens
                                         </a>
                                     </h4>
                                 </div>
-                                <div id="womens" class="panel-collapse collapse">
+                                <div id="womens" class="con panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul>
                                             <li><a href="#">Fendi</a></li>
@@ -150,62 +105,46 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">Kids</a></h4>
+                            </div> -->
+                        @foreach($titleVcabulary as $key=>$va)
+                            <div style="color:black" class="">
+                                <div class="show-hide">
+                                    <h4 style="color:black;font-size:14px;" class="">
+                                        <a style="color:black; padding-left:5px;">
+                                            <span style="color:black;padding-right:5px;font-size:12px;" class="badge pull-right"><i class=" show-hide fa fa-plus"></i></span>
+                                            {{$va->id}}{{$va->CV_title}}
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div class="con">
+                                        <ul style="color:black;">
+                                            <li><a href="#">Fendi</a></li>
+                                            <li><a href="#">Guess</a></li>
+                                            <li><a href="#">Valentino</a></li>
+                                            <li><a href="#">Dior</a></li>
+                                            <li><a href="#">Versace</a></li>
+                                        </ul>
                                 </div>
                             </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">Fashion</a></h4>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">Households</a></h4>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">Interiors</a></h4>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">Clothing</a></h4>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">Bags</a></h4>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
+                        @endforeach
+
+
+                            
+                            <!-- <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title"><a href="#">Shoes</a></h4>
                                 </div>
-                            </div>
+                            </div> -->
+                            
                         </div><!--/category-products-->
                     
                         <div class="brands_products"><!--brands_products-->
                             <h2>Grammar</h2>
                             <div class="brands-name">
                                 <ul class="nav nav-pills nav-stacked">
-                                    <li><a href="#"> <span class="pull-right"></span>1. Thì hiện tại đơn –  Present simple</a></li>
-                            
-                                    <li><a href="#"> <span class="pull-right"></span>2. Thì hiện tại tiếp diễn – Present continuous tense</a></li>
-                                    <li><a href="#"> <span class="pull-right"></span>3. Thì hiện tại hoàn thành – Present perfect tense</a></li>
-                                    <li><a href="#"> <span class="pull-right"></span>4. Thì hiện tại hoàn thành tiếp diễn – Present perfect continuous tense</a></li>
-                                    <li><a href="#"> <span class="pull-right"></span>5. Thì quá khứ đơn – Past simple tense</a></li>
-                                    <li><a href="#"> <span class="pull-right"></span>6. Thì quá khứ tiếp diễn – Past continuous tense</a></li>
-                                    <li><a href="#"> <span class="pull-right"></span>7. Thì quá khứ hoàn thành – Past perfect tense</a></li>
-                                    <li><a href="#"> <span class="pull-right"></span>8. Thì quá khứ hoàn thành tiếp diễn – Past perfect continuous tense </a></li>
-                                    <li><a href="#"> <span class="pull-right"></span>9. Thì tương lai đơn – Simple future tense</a></li>
-                                    <li><a href="#"> <span class="pull-right"></span>10. Thì tương lai tiếp diễn – Future continuous tense</a></li>
-                                    <li><a href="#"> <span class="pull-right"></span>11. Thì tương lai hoàn thành – Future perfect tense</a></li>
-                                    <li><a href="#"> <span class="pull-right"></span>12. Thì tương lai hoàn thành tiếp diễn – Future perfect continuous tense</a></li>
-                                    
+                                    @foreach($titleGrammar as $key=>$value)
+                                    <li><a href="{{route('detail-grammar',$value->id)}}"> <span class="pull-right"></span>{{$value->title}}</a></li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div><!--/brands_products-->
@@ -612,12 +551,7 @@
         </div>
         
       <!--  phan trang -->
-      <ul>
-        <li><a>1</a></li>
-        <li><a>1</a></li>
-        <li><a>1</a></li>
-        <li><a>1</a></li>
-      </ul>
+      
     </div><!--features_items-->
     
 

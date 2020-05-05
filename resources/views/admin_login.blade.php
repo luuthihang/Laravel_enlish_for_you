@@ -42,7 +42,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			{{csrf_field()}}
 			<input type="email" class="ggg" name="Email" placeholder="E-MAIL" required="">
 			<input type="password" class="ggg" name="Password" placeholder="PASSWORD" required="">
-			<input type="text" class="ggg" name="id" placeholder="test" required="">
+			
 			<span><input type="checkbox" />Remember Me</span>
 			<h6><a href="#">Forgot Password?</a></h6>
 				<div class="clearfix"></div>

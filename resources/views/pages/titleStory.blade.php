@@ -13,10 +13,10 @@
 			<li>
 				<div class="imagesBox">
 					<figure>
-						<img src="./public/frontend/images/hoa6.jpg">
+						<img style="height:237px;" src="./public/frontend/images/{{($value->image1)}}">
 						<figcaption>
-							<h1>Vegetables Vocabulary</h1>
-							<p>One type of food that </p>
+							<h1>{{($value->title_en)}}</h1>
+							<p>{{($value->title_vn)}}</p>
 							<a href="{{route('story',$value->id)}}">read more</a>
 
 						</figcaption>
