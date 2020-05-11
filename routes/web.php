@@ -75,10 +75,17 @@ Route::get('/video/show-list-videos/{id_category_video}',[
 
 Route::get('/data','VideosController@insertData');
 
+Route::get('/Exercise','controllerExercise@show_exercise');
+Route::post('/Result_learn1','controllerExercise@show_result1');
+
+
+Route::get('/Exercise2','controllerExercise@show_exercise2');
+Route::post('/Result_learn2','controllerExercise@show_result2');
+
 //backend
 Route::get('/admin','AdminController@index');
 Route::get('/dashboard','AdminController@show_dashboard');
-Route::post('/admin-dashboard','AdminController@dashboard');
+Route::get('/admin-dashboard','AdminController@dashboard');
 Route::get('/logOut','AdminController@logOut');
 
 

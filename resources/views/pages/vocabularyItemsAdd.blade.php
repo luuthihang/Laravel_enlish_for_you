@@ -131,7 +131,7 @@
               $i_a++;
                //echo  $getNameAudio; 
             ?>
-            <audio id="<?php echo $getNameAudio;  ?>">
+            <audio id="<?php echo $getNameAudio;?>">
                <source src="../public/frontend/Audios/{{$getNameAudio}}">
             </audio>
             <span style='padding-right:2px'>
