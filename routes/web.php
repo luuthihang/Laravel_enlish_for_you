@@ -82,6 +82,9 @@ Route::post('/Result_learn1','controllerExercise@show_result1');
 Route::get('/Exercise2','controllerExercise@show_exercise2');
 Route::post('/Result_learn2','controllerExercise@show_result2');
 
+Route::get('/Exercise3','controllerExercise@show_exercise3');
+Route::post('/Result_learn3','controllerExercise@show_result3');
+
 //backend
 Route::get('/admin','AdminController@index');
 Route::get('/dashboard','AdminController@show_dashboard');

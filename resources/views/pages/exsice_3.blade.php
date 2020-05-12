@@ -4,7 +4,7 @@
 <?php
 
 //require_once 'function_data.blade.php'; 
-function createDatat($fileQuestion="F:\laragon\www\boctachHTML\data\question2.txt",$fileOption="F:\laragon\www\boctachHTML\data\qresult2.txt"){
+function createDatat($fileQuestion="F:\laragon\www\boctachHTML\data\question3.txt",$fileOption="F:\laragon\www\boctachHTML\data\qresult3.txt"){
   
 $data=file($fileQuestion) or die("cannot reaf file");
 array_shift($data);
@@ -13,7 +13,7 @@ array_shift($data);
 $arrayQuestion=array();
 foreach ($data as $key => $value) {
   $tmp=explode('|', $value);
-  $arrayQuestion[$tmp[0]]=array("id"=>$tmp[0],"quetion"=>$tmp[1],"answer"=>'option_'.trim($tmp[2]),"audio"=>$tmp[3],"pronounce"=>$tmp[4],"means"=>$tmp[5]);
+  $arrayQuestion[$tmp[0]]=array("id"=>$tmp[0],"quetion"=>$tmp[1],"answer"=>'option_'.trim($tmp[2]),"audio"=>$tmp[3],"pronounce"=>$tmp[4],"means"=>$tmp[5],"questionWord"=>$tmp[6],"englishWord"=>$tmp[7]);
 }
 #get answer
   
@@ -72,7 +72,8 @@ if(!empty($data)){
              </div>
 
               <div class="col-md-6">
-            <p><b>'.$i.": ".$value["means"].$value["pronounce"].':</b> </p>  
+            <p><b>'.$i.": ".$value["means"].$value["pronounce"].':</b> </p> 
+            <p style="color:green;font-size:30px; align:center; margin: auto;text-align: center;"><b>('.$value["questionWord"].')<hr/></b></p> 
             <div class="row">
               <div class="col-md-6">
                 '.$option0.$option1.'
@@ -93,7 +94,7 @@ if(!empty($data)){
 
 	    <div style="font-size:20px;"class="container list-quiz ">
         <h1 class="page-header">trắc nghiệm trực tuyến</h1>
-        <form class="border-form" action="{{URL::to('/Result_learn2')}}" method="post" name="test-form" id="test-form">
+        <form class="border-form" action="{{URL::to('/Result_learn3')}}" method="post" name="test-form" id="test-form">
           @csrf
           <?php
           echo $html;

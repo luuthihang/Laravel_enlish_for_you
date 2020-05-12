@@ -4,7 +4,7 @@
 <?php
 
 //require_once 'function_data.blade.php'; 
-function createDatat($fileQuestion="F:\laragon\www\boctachHTML\question.txt",$fileOption="F:\laragon\www\boctachHTML\qresult.txt"){
+function createDatat($fileQuestion="F:\laragon\www\boctachHTML\data\question.txt",$fileOption="F:\laragon\www\boctachHTML\data\qresult.txt"){
   
 $data=file($fileQuestion) or die("cannot reaf file");
 array_shift($data);

@@ -23,6 +23,15 @@ class controllerExercise extends Controller
     	return view('pages.resule_learn2');
     }
 
+    #3
+     public function show_exercise3(){
+    	return view('pages.exsice_3');
+    }
+
+    public function show_result3(){
+    	return view('pages.resule_learn3');
+    }
+
     
 
 

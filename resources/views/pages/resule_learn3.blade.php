@@ -43,9 +43,9 @@ $data=unserialize($_POST["array_data"]);
 // print_r($_POST);
 // echo "</pre>";
 
-// echo "<pre>";
-// print_r($data);
-// echo "</pre>";
+echo "<pre>";
+print_r($data);
+echo "</pre>";
 
 $html='';
 $i=1;
@@ -67,8 +67,9 @@ if(!empty($data)){
     $option3=showAnswesCheck('option_3',$_POST['question_'.$value['id']],$value['answer'],$value['option_3'],'D');
     
 
-    $html.=' <div style="border-bottom:1px solid black;" class="form-group">
-
+    $html.=' <div style="font-size:28px;font-family:Comic Sans MS;border-bottom:1px solid black; margin-bottom:50px;padding-bottom:50px;" class="form-group">
+            <div class="row">
+             <div class="col-md-6">
             <div class="box-image">
             
              </div>
@@ -77,11 +78,13 @@ if(!empty($data)){
             </audio>
 
             <span style="padding-right:2px">
-               <button onclick="playAudio('."'".trim($value['audio'])."'".')" type="button" style="font-size:12px;color:green"><img src="public/frontend/images/'.$value['quetion'].'"/>
+               <button onclick="playAudio('."'".trim($value['audio'])."'".')" type="button" style="font-size:12px;color:green"><img style="width:400px; height:400px;" src="public/frontend/images/'.$value['quetion'].'"/>
                </button>
             </span>
+            </div>
 
-            <p><b>'.$i.': </b> </p>
+             <div class="col-md-6">
+            <p><b>'.$i.': '.$value["englishWord"].' </b> </p>
             <div class="row">
               <div class="col-md-6">
                 '.$option0.$option1.'
@@ -91,8 +94,8 @@ if(!empty($data)){
                 '.$option2.$option3.'
               </div>
             </div>
-
-
+            </div>
+             </div>
           </div>';
           $i++;
   }
