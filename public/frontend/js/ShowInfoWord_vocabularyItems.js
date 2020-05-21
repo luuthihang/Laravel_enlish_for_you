@@ -10,6 +10,7 @@ $(document).ready(function(){
       showInfoVocabulary(button,contentCard);
 
       showInfoVocabulary('.show-hide','.con');
+       //$('html,body').animate({scrollTop::$(button).offset().top},400);
 
     });
 
@@ -22,5 +23,6 @@ function showInfoVocabulary(button,contentCardAdd){
     // $('contentCard').addClass('contentCardAdd');
     // $(this).next($(contentCardAdd).slideToggle(600));
      $(this).next(contentCardAdd).slideToggle(300);
+
    });
 }

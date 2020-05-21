@@ -30,9 +30,9 @@
       </div>
       <div class="col-sm-3">
         <div class="input-group">
-          <input type="text" class="input-sm form-control" placeholder="Search">
+          <input id="myInput" type="text" class="input-sm form-control" placeholder="Search">
           <span class="input-group-btn">
-            <button class="btn btn-sm btn-default" type="button">Go!</button>
+            <button  class="btn btn-sm btn-default" type="button">Go!</button>
           </span>
         </div>
       </div>
@@ -64,7 +64,7 @@
            <!--  <th style="width:30px;"></th> -->
           </tr>
         </thead>
-        <tbody>
+        <tbody id="myTable">
           <!-- <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
             <td>Idrawfast prototype design prototype design prototype design prototype design prototype design</td>
@@ -116,4 +116,15 @@
     </footer>
   </div>
 </div>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
 @endsection

@@ -20,6 +20,7 @@
      <link href="{{asset('public/frontend/css/modifile.css')}}" rel="stylesheet">
      <link href="{{asset('public/frontend/css/style_menu.css')}}" rel="stylesheet">
      <link href="{{asset('public/frontend/css/execire.css')}}" rel="stylesheet">
+     <link href="{{asset('public/frontend/css/loadTime.css')}}" rel="stylesheet">
     
      <link rel="stylesheet" type="text/css" href="{{asset('public/frontend/css/language1.css')}}">
      <link rel="stylesheet" href="{{('public/frontend/css/SuLyAnh.css')}}" type="text/css"></link>

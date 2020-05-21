@@ -43,9 +43,9 @@ $data=unserialize($_POST["array_data"]);
 // print_r($_POST);
 // echo "</pre>";
 
-echo "<pre>";
-print_r($data);
-echo "</pre>";
+// echo "<pre>";
+// print_r($data);
+// echo "</pre>";
 
 $html='';
 $i=1;
@@ -116,7 +116,7 @@ if(!empty($data)){
           <label>Kết Quả:</label>
         <input type="text" name="thongke" value="<?php echo "Bạn Đúng: " .$countTrue ."/".$count." Đáp án"; ?>">
       </br>
-          <a class="btn btn-primary" href="{{URL::to('/Exercise2')}}">Làm Lại</a>
+          <a class="btn btn-primary" href="{{URL::to('/Exercise3')}}">Làm Lại</a>
         </form>
       </div>
 

@@ -33,7 +33,7 @@ foreach ($data as $key => $value) {
 //tra ve cac dau an cau cau hoi
 function ShowAnswer($idQuestion,$value,$answer,$op){
   $xhtml='<div class="radio">
-                  <label><input type="radio" name="question_'.$idQuestion.'"  value="'.$value.'" >'.$op.': '.$answer.'</label>
+                  <label><input  type="radio" class="radio" name="question_'.$idQuestion.'"  value="'.$value.'" >'.$op.': '.$answer.'</label>
                 </div>';
   return $xhtml;
 }
@@ -93,7 +93,25 @@ if(!empty($data)){
 ?>
 
 	    <div style="font-size:20px;"class="container list-quiz ">
-        <h1 class="page-header">trắc nghiệm trực tuyến</h1>
+        <div class="row">
+          <div class="col-md-8">
+             <h1 class="page-header">trắc nghiệm trực tuyến</h1>
+          </div>
+
+         <!--  <div class="col-md-4">
+             <h1 id="time" class="page-header"></h1>
+          </div> -->
+
+          <div class="cyl col-md-4">
+             <div  class="ring page-header">
+              <h1 id="time2"></h1>
+              <span></span>
+             </div>
+             
+          </div>
+
+        </div>
+       
         <form class="border-form" action="{{URL::to('/Result_learn3')}}" method="post" name="test-form" id="test-form">
           @csrf
           <?php
@@ -101,6 +119,7 @@ if(!empty($data)){
           ?>
           <input type="hidden" name="array_data" value="<?php echo htmlentities(serialize($data)); ?>"/>
           <button type="submit" class="btn btn-primary" disabled="disabled">Hoàn Thành</button>
+          
         </form>
         
       </div>
@@ -113,9 +132,6 @@ if(!empty($data)){
             $('button[type=submit]').removeAttr('disabled');
            }
         });
-
-
-       
   });
   </script>
 
@@ -128,15 +144,52 @@ function playAudio(id_audio) {
 </script>
 <style>
 .current:hover { transform: scale(1.1);border: 1px solid black; box-shadow: 0 20px 50px rgba(0,0,0,0.8);  }
+.scallar { transform: scale(1.1);border: 1px solid black; box-shadow: 0 20px 50px rgba(0,0,0,0.8);  }
+
 </style>
 <script>
 $(function(){
     $('.image-learn2').click(function(){
        $('.image-learn2').removeClass('current');     
         $(this).addClass('current');
-
     });
 });
 </script>
+// <script type="text/javascript">
+//   document.getElementById("time").innerHTML="hang";
+// </script>
+
+<script type="text/javascript">
+var so=60;
+  function DongHo(){
+    so--;
+    if(so !=0 ){
+      document.getElementById("time2").innerHTML=so+"s";
+      setTimeout("DongHo()",1000);
+    }else{
+      document.getElementById("time2").innerHTML="Hết Giời";
+      $('.radio').attr('disabled','disabled');
+    }
+  }
+  DongHo();
+</script>
+
+
+<script type="text/javascript">
+  jQuery(document).ready(function(){
+      pos=$(".cyl").position();
+$(window).scroll(function(){
+      var posScoll=$(document).scrollTop();
+      if(parseInt(posScoll)>parseInt(pos.top)){
+            $(".cyl").addClass('fixNavC');
+           
+      }else{
+            $(".cyl").removeClass('fixNavC');
+           
+      }
+});
+});
+</script>
+
 
   @endsection

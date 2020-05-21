@@ -33,7 +33,7 @@ foreach ($data as $key => $value) {
 //tra ve cac dau an cau cau hoi
 function ShowAnswer($idQuestion,$value,$answer,$op){
   $xhtml='<div class="radio">
-                  <label><input type="radio" name="question_'.$idQuestion.'"  value="'.$value.'" >'.$op.': '.$answer.'</label>
+                  <label><input type="radio" class="radio" name="question_'.$idQuestion.'"  value="'.$value.'" >'.$op.': '.$answer.'</label>
                 </div>';
   return $xhtml;
 }
@@ -92,7 +92,18 @@ if(!empty($data)){
 ?>
 
 	    <div style="font-size:20px;"class="container list-quiz ">
-        <h1 class="page-header">trắc nghiệm trực tuyến</h1>
+        <div class="row">
+          <div class="col-md-8">
+            <h1 class="page-header">trắc nghiệm trực tuyến</h1>
+          </div>
+          <div class="cyl col-md-4">
+             <div  class="ring page-header">
+              <h1 id="time2"></h1>
+              <span></span>
+             </div>
+          </div>
+        </div>
+        
         <form class="border-form" action="{{URL::to('/Result_learn2')}}" method="post" name="test-form" id="test-form">
           @csrf
           <?php
@@ -135,6 +146,39 @@ $(function(){
         $(this).addClass('current');
 
     });
+});
+</script>
+
+
+<script type="text/javascript">
+var so=60;
+  function DongHo(){
+    so--;
+    if(so !=0 ){
+      document.getElementById("time2").innerHTML=so+"s";
+      setTimeout("DongHo()",1000);
+    }else{
+      document.getElementById("time2").innerHTML="Hết Giời";
+      $('.radio').attr('disabled','disabled');
+    }
+  }
+  DongHo();
+</script>
+
+
+<script type="text/javascript">
+  jQuery(document).ready(function(){
+      pos=$(".cyl").position();
+$(window).scroll(function(){
+      var posScoll=$(document).scrollTop();
+      if(parseInt(posScoll)>parseInt(pos.top)){
+            $(".cyl").addClass('fixNavC');
+           
+      }else{
+            $(".cyl").removeClass('fixNavC');
+           
+      }
+});
 });
 </script>
 

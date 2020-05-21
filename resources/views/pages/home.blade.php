@@ -237,14 +237,14 @@
             <div class="product-image-wrapper">
                 <div class="single-products">
                     <div class="card_HVC middle">
-                        <div class="front">
+                        <div class="front ft">
                             <img src="{{('public/frontend/images/hoa5.jpg')}}"/>
                             <div class="dital topDital">
                             <p>What is this?</p>
                             </div>
                         </div>
                         
-                        <div class="back">
+                        <div class="back bk">
                             <div class="back-content middle1">
                                 <h1>english_vocabory</h1>
                                 <h1>Viennames_vocabory</h1>
@@ -273,14 +273,14 @@
             <div class="product-image-wrapper">
                 <div class="single-products">
                       <div class="card_HVC middle">
-                    <div class="front">
+                    <div class="front ft">
                         <img src="{{('public/frontend/images/hoabk1.jpg')}}"/>
                         <div class="dital topDital">
                         <p>What is this?</p>
                         </div>
                     </div>
                     
-                    <div class="back">
+                    <div class="back bk">
                         <div class="back-content middle1">
                             <h1>english_vocabory</h1>
                             <h1>Viennames_vocabory</h1>
@@ -519,14 +519,14 @@
             <div class="product-image-wrapper">
                 <div class="single-products">
                       <div class="card_HVC middle">
-                    <div class="front">
+                    <div class="front ft">
                         <img src="{{('public/frontend/images/hoa6.jpg')}}"/>
                         <div class="dital topDital">
                         <p>What is this?</p>
                         </div>
                     </div>
                     
-                    <div class="back">
+                    <div class="back bk">
                         <div class="back-content middle1">
                             <h1>english_vocabory</h1>
                             <h1>Viennames_vocabory</h1>
@@ -565,7 +565,7 @@
                 <li><a href="#poloshirt" data-toggle="tab">Tình Huống</a></li>
             </ul>
         </div>
-        <div class="tab-content">
+       <!--  <div class="tab-content">
             <div class="tab-pane fade active in" id="tshirt" >
                 <div class="col-sm-3">
                     <div class="product-image-wrapper">
@@ -651,7 +651,7 @@
                 
                 
             </div>
-        </div>
+        </div> -->
     </div><!--/category-tab-->
 
     <!--recommended_items-->
@@ -755,5 +755,29 @@
     </div>
      <!--/recommended_items-->
 </div>
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        // $(".front").click(function(){
+        //     $(this).toggleClass("ft");
+        //     $(this).next(".back").toggleClass("bk");
+        // });
+
+        // $(".back").click(function(){
+        //     $(this).toggleClass("bk1");
+        // });
+
+        // $(".back").click(function(){
+        //     // $(this).css("transform","perspective(600px) rotateY(0deg)");
+        //     $(this).toggleClass("bk");
+        // });
+
+        $(".card_HVC").click(function(){
+            $(this).find(".front").toggleClass("ft");
+            $(this).find(".back").toggleClass("bk");
+        });
+        
+    });
+</script>
 
 @endsection

@@ -110,6 +110,16 @@
                                 </li> 
                                 <li><a href="{{route('Video')}}">Videos</a></li>
                                 <li><a href="contact-us.html">share Experience</a></li>
+
+                                 <li class="dropdown"><a href="#">Do Exercise<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+                                         <li><a href="{{URL::to('/Exercise')}}">Exercise1</a></li>
+                                        <li><a href="{{URL::to('/Exercise2')}}">Exercise2</a></li>
+                                        <li><a href="{{URL::to('/Exercise3')}}">Exercise3</a></li>
+                                        
+                                    </ul>
+                                </li> 
+
                             </ul>
                         </div>
                     </div>

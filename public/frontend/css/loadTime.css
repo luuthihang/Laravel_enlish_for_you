@@ -1,0 +1,111 @@
+.ring{
+	position: absolute;
+	top:50%;
+	left: 78%;
+	transform: translate(-50% ,-50%);
+	width:100px;
+	height: 100px;
+	background: transparent;
+	border: 3px solid #3c3c3c;
+	border: 3px solid #fff000;
+	border-radius:50%;
+	text-align:center;
+	line-height: 100px;
+	/*background: #262626;*/
+	font-family: sans-serif;
+	font-size: 30px;
+	color: green;
+	letter-spacing: 4px;
+	/*text-transform: uppercase;*/
+	text-shadow:0 0 10px #fff000;
+	box-shadow: 0 0 20px rgba(0,0,0,.5);
+}
+
+
+.ring:before{
+	content:'';
+	position: absolute;
+	top:-1px;
+	left: -1px;
+	width: 100%;
+	height: 100%;
+	border: 5px solid transparent;
+	border-top: 5px solid green;
+	border-right: 3px solid green;
+	border-radius: 50%;
+	animation:animateCircle 2s linear infinite;
+
+}
+.ring span{
+	display: block;
+	position: absolute;
+	top:calc(50% - 2px);
+	left: 50%;
+	width:50%;
+	height: 4px;
+	background: transparent;
+	transform-origin:left;
+	animation:animate 2s linear infinite;
+
+}
+
+
+.ring span:before{
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: green;
+	top:-6%;
+	right: -8%;
+	box-shadow: 0 0 20 #fff000;
+
+}
+
+.fixNavC1{
+	width: 100%;
+  height: 20px;
+  /*background-color:#a29bfe;*//*#636e72#636e72 #b2bec3*/
+  display: block;
+ /* box-shadow: 0px 2px 2px rgba(0,0,0,0.5);*/ /*Đổ bóng cho menu*/
+  position: fixed; /*Cho menu cố định 1 vị trí với top và left*/
+  top: 40px; /*Nằm trên cùng*/
+  /*left: 0;*/ /*Nằm sát bên trái*/
+  z-index: 100000; /*Hiển thị lớp trên cùng*/
+  
+
+}
+.fixNavC{
+	position: fixed;
+	 z-index: 100000;
+	  display: block;
+	  top: 40px;
+	  width: 100%;
+  height: 20px;
+}
+
+@keyframes animate{
+	0%
+	{
+		transform:rotate(45deg);
+	}
+
+	100%
+	{
+		transform:rotate(405deg);
+	}
+}
+
+
+@keyframes animateCircle{
+	0%
+	{
+		transform:rotate(0deg);
+	}
+
+	100%
+	{
+		transform:rotate(360deg);
+	}
+}
